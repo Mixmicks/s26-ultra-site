@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galaxy S26 Ultra — Beyond Flagship</title>
+<meta name="description" content="Samsung Galaxy S26 Ultra — เรือธงที่รวมพลัง AI, ปากกา S Pen, กล้อง 200MP และจอความเป็นส่วนตัวรุ่นแรกของโลก">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- SF Pro / SF Thai are Apple system fonts with no public webfont files; no ./fonts directory was found in this
+     project, so we rely on the OS-provided fonts on Apple devices and fall back to Inter / IBM Plex Sans Thai
+     (loaded above) everywhere else. -->
+<style>
+  :root{
+    --black:#000; --near:#08080a; --panel:rgba(255,255,255,.035);
+    --platinum:#f4f4f7; --silver:#b6b6be; --muted:#71717c; --faint:#3a3a42;
+    --accent:#9a8cff;
+    --line:rgba(255,255,255,.10);
+    --ease:cubic-bezier(.16,1,.3,1);
+    --maxw:1180px;
+    --font-head:"SF Pro Display","SF Thai",-apple-system,BlinkMacSystemFont,"Inter","IBM Plex Sans Thai",sans-serif;
+    --font-body:"SF Pro Text","SF Thai",-apple-system,BlinkMacSystemFont,"Inter","IBM Plex Sans Thai",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--black);color:var(--platinum);font-family:var(--font-body);font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+  h1,h2,h3{font-family:var(--font-head);line-height:1.08;letter-spacing:-.015em;font-weight:300}
+  .mono{font-family:var(--font-body)}
+  a{color:inherit;text-decoration:none}
+  img,video{display:block;max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+  ::selection{background:rgba(154,140,255,.3)}
+  .eyebrow{font-family:var(--font-body);font-size:.7rem;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--accent);display:inline-block;margin-bottom:22px}
+  .lead{font-size:clamp(1.05rem,1.6vw,1.28rem);color:var(--silver);font-weight:300;max-width:34rem}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .5s var(--ease),backdrop-filter .5s}
+  nav.solid{background:rgba(0,0,0,.6);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{font-family:var(--font-body);font-weight:500;font-size:1rem;letter-spacing:.24em;text-transform:uppercase}
+  .brand-logo{display:flex;align-items:center}
+  .logo-img{height:24px;width:auto;display:block;filter:invert(1);-webkit-filter:invert(1)}
+  .nav-links{display:flex;gap:38px;font-size:.85rem;color:var(--silver);letter-spacing:.02em}
+  .nav-links a{position:relative;transition:color .3s}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--platinum);transition:width .4s var(--ease)}
+  .nav-links a:hover{color:var(--platinum)}
+  .nav-links a:hover::after{width:100%}
+  .btn{display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:none;font-family:var(--font-body);font-weight:500;font-size:.9rem;letter-spacing:.01em;padding:13px 30px;border-radius:100px;transition:transform .4s var(--ease),background .4s,color .4s,border-color .4s,box-shadow .5s}
+  .btn:focus-visible{outline:1px solid var(--accent);outline-offset:4px}
+  .btn-primary{background:var(--platinum);color:#000}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,255,255,.14)}
+  .btn-outline{background:transparent;color:var(--platinum);border:1px solid var(--line)}
+  .btn-outline:hover{border-color:var(--platinum);transform:translateY(-2px)}
+  .btn-sm{padding:10px 24px;font-size:.82rem}
+  .hero{position:relative;height:100svh;min-height:640px;overflow:hidden;display:flex;align-items:flex-end}
+  .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;will-change:transform;transform:scale(1.04);
+    -webkit-mask-image:radial-gradient(135% 120% at 50% 42%, #000 60%, transparent 100%);
+    mask-image:radial-gradient(135% 120% at 50% 42%, #000 60%, transparent 100%)}
+  .hero-veil{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to bottom, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 22%, rgba(0,0,0,0) 55%, rgba(0,0,0,.65) 82%, #000 100%)}
+  .hero-content{position:relative;z-index:2;width:100%;padding-bottom:clamp(60px,10vh,110px)}
+  .hero h1{font-size:clamp(2.8rem,8vw,6.4rem);font-weight:200;letter-spacing:-.02em}
+  .hero h1 b{font-weight:500}
+  .hero .sub{margin-top:20px;font-size:clamp(1rem,1.7vw,1.3rem);color:var(--silver);font-weight:300;max-width:32rem}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:38px}
+  .scroll-cue{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:2;font-family:var(--font-body);font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:10px}
+  .scroll-cue .rail{width:1px;height:46px;background:linear-gradient(var(--muted),transparent);position:relative;overflow:hidden}
+  .scroll-cue .rail::after{content:"";position:absolute;top:-50%;left:0;width:1px;height:50%;background:var(--platinum);animation:drop 2.4s var(--ease) infinite}
+  @keyframes drop{0%{top:-50%}60%,100%{top:100%}}
+  section{position:relative;padding:clamp(90px,15vh,180px) 0}
+  .center{text-align:center;display:flex;flex-direction:column;align-items:center}
+  .center .lead{margin-left:auto;margin-right:auto}
+  h2.big{font-size:clamp(2rem,5.2vw,4rem);font-weight:200;letter-spacing:-.02em}
+  h2.big b{font-weight:500}
+  .divider{width:100%;height:1px;background:var(--line);max-width:var(--maxw);margin:0 auto}
+  .anim{will-change:transform,opacity}
+  .kicker{max-width:40rem}
+  .statement{font-family:var(--font-head);font-size:clamp(1.6rem,3.6vw,2.9rem);font-weight:200;line-height:1.32;letter-spacing:-.01em;max-width:26ch;margin:0 auto;text-align:center;color:var(--platinum)}
+  .statement b{font-weight:500}
+  .statement .dim{color:var(--muted)}
+  .feat{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-block:1px solid var(--line)}
+  .feat .cell{background:#000;padding:clamp(30px,4vw,54px) clamp(20px,2.6vw,36px);transition:background .5s}
+  .feat .cell:hover{background:#0a0a0c}
+  .feat .n{font-family:var(--font-body);font-size:.72rem;letter-spacing:.2em;color:var(--muted)}
+  .feat .cell h3{font-size:1.35rem;font-weight:400;margin:26px 0 10px}
+  .feat .cell p{color:var(--silver);font-size:.96rem;font-weight:300}
+  .cell-media{aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:#0a0a0c;margin-bottom:24px}
+  .cell-media img{width:100%;height:100%;object-fit:cover;display:block}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);align-items:center}
+  .split.rev .visual{order:2}
+  .media-frame{position:relative;aspect-ratio:4/5;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:#050507}
+  .media-frame video{width:100%;height:100%;object-fit:cover;display:block}
+  .stat-row{display:flex;gap:40px;margin-top:34px;flex-wrap:wrap}
+  .stat .v{font-family:var(--font-head);font-size:clamp(2rem,4vw,3rem);font-weight:500;letter-spacing:-.02em}
+  .stat .v small{font-size:1rem;color:var(--muted);font-weight:400}
+  .stat .l{font-size:.82rem;color:var(--muted);letter-spacing:.04em;margin-top:2px}
+  .aud{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,64px);align-items:center}
+  .aud ul{list-style:none;margin-top:26px;display:flex;flex-direction:column;gap:16px}
+  .aud li{display:flex;gap:14px;font-size:1rem;color:var(--silver);font-weight:300}
+  .aud li b{color:var(--platinum);font-weight:500}
+  .aud .k{flex:none;width:24px;height:24px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--accent);font-size:.7rem;margin-top:3px}
+  .persona{background:linear-gradient(160deg,rgba(154,140,255,.08),transparent);border:1px solid var(--line);border-radius:22px;padding:34px}
+  .persona .who{display:flex;align-items:center;gap:15px;margin-bottom:20px}
+  .avatar{width:54px;height:54px;border-radius:16px;background:linear-gradient(140deg,var(--accent),#4a5bd0);display:grid;place-items:center;font-weight:500;font-size:1.4rem;color:#fff}
+  .persona dl{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font-size:.92rem}
+  .persona dt{color:var(--muted)}
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+  .tier{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:38px 30px;text-align:center;position:relative;transition:transform .5s var(--ease),border-color .4s,background .4s}
+  .tier:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.28)}
+  .tier.best{border-color:rgba(154,140,255,.5)}
+  .tier .badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--accent);color:#0a0713;font-size:.66rem;font-weight:600;padding:5px 15px;border-radius:100px;letter-spacing:.04em}
+  .tier .cap{font-family:var(--font-body);font-size:1.1rem;font-weight:500;letter-spacing:.06em;color:var(--silver)}
+  .tier .amt{font-family:var(--font-head);font-size:2.3rem;font-weight:500;margin:14px 0 4px;letter-spacing:-.02em}
+  .tier .note{font-size:.84rem;color:var(--muted);margin-bottom:24px;min-height:2.4em}
+  .colors{display:flex;gap:12px;justify-content:center;margin-top:40px}
+  .swatch{width:26px;height:26px;border-radius:50%;border:1px solid rgba(255,255,255,.2);cursor:pointer;transition:transform .3s}
+  .swatch:hover{transform:scale(1.18)}
+  .fine{text-align:center;color:var(--muted);font-size:.8rem;margin-top:22px;max-width:44rem;margin-inline:auto}
+  .duo{display:grid;grid-template-columns:1.15fr .85fr;gap:20px}
+  .box{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:40px}
+  .field{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+  input.inp{flex:1;min-width:190px;background:#000;border:1px solid var(--line);color:var(--platinum);border-radius:100px;padding:14px 22px;font-family:inherit;font-size:.95rem;transition:border-color .3s}
+  input.inp:focus{outline:none;border-color:var(--accent)}
+  .msg{font-size:.86rem;color:var(--accent);margin-top:14px;min-height:1.2em}
+  .crow{display:flex;align-items:center;gap:13px;margin-top:14px;color:var(--silver);font-size:.95rem;font-weight:300}
+  .crow svg{width:19px;height:19px;stroke:var(--accent);fill:none;stroke-width:1.5;flex:none}
+  .crow a{color:var(--accent);text-decoration:underline;text-decoration-color:rgba(154,140,255,.4);text-underline-offset:3px;transition:color .3s}
+  .crow a:hover{color:var(--platinum)}
+  footer{border-top:1px solid var(--line);padding:64px 0 48px}
+  .foot-top{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;margin-bottom:34px}
+  .foot-links{display:flex;gap:28px;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
+  .foot-links a:hover{color:var(--platinum)}
+  .disclaimer{border:1px solid var(--line);border-radius:14px;padding:20px 24px;font-size:.85rem;color:var(--silver);line-height:1.75;font-weight:300;background:rgba(255,255,255,.02)}
+  .disclaimer strong{color:var(--platinum);font-weight:500}
+  .copy{color:var(--muted);font-size:.8rem;margin-top:22px;text-align:center;font-weight:300}
+  body::after{content:"";position:fixed;inset:0;z-index:999;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .marquee-wrap{overflow:hidden;white-space:nowrap;padding:clamp(14px,2.4vw,26px) 0;border-block:1px solid var(--line)}
+  .marquee-track{display:inline-flex;animation:marquee 30s linear infinite;will-change:transform}
+  .marquee-track span{font-family:var(--font-head);font-weight:600;font-size:clamp(2.2rem,7.5vw,5.6rem);text-transform:uppercase;letter-spacing:.01em;color:transparent;-webkit-text-stroke:1px rgba(244,244,247,.3);padding-right:.6em}
+  @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (max-width:860px){
+    .nav-links{display:none}
+    .feat{grid-template-columns:1fr}
+    .split,.aud,.duo{grid-template-columns:1fr;gap:40px}
+    .split.rev .visual{order:0}
+    .price-grid{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition-duration:.001ms!important}
+    html{scroll-behavior:auto}
+    .hero-video{transform:none}
+  }
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="wrap nav-in">
+    <div class="brand-logo"><img class="logo-img" src="./Samsung_Orig_Wordmark_BLACK_RGB.png" alt="Samsung"></div>
+    <div class="nav-links">
+      <a href="#intro">ภาพรวม</a><a href="#camera">กล้อง</a><a href="#ai">AI</a><a href="#display">จอภาพ</a><a href="#price">ราคา</a>
+    </div>
+    <a href="#price" class="btn btn-primary btn-sm">Buy Now</a>
+  </div>
+</nav>
+
+<header class="hero" id="heroSection">
+  <video class="hero-video" id="heroVideo" muted playsinline preload="auto">
+    <source src="./S26_Ultra_scroll.mp4" type="video/mp4">
+  </video>
+  <div class="hero-veil"></div>
+  <div class="hero-content">
+    <div class="wrap">
+      <span class="eyebrow anim">Samsung Galaxy · 2026</span>
+      <h1 class="anim">S26 <b>Ultra</b></h1>
+      <p class="sub anim">พลังเหนือเรือธง — AI, S Pen, กล้อง 200MP และจอความเป็นส่วนตัวรุ่นแรกของโลก ในเครื่องเดียว</p>
+      <div class="hero-actions anim">
+        <a href="#price" class="btn btn-primary">สั่งซื้อ · Buy Now</a>
+        <a href="#intro" class="btn btn-outline">ดูเพิ่มเติม · Learn More</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><span class="rail"></span></div>
+</header>
+
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span>GALAXY AI · S PEN · 200MP CAMERA · PRIVACY DISPLAY · SNAPDRAGON 8 ELITE ·&nbsp;</span>
+    <span>GALAXY AI · S PEN · 200MP CAMERA · PRIVACY DISPLAY · SNAPDRAGON 8 ELITE ·&nbsp;</span>
+  </div>
+</div>
+
+<section id="intro">
+  <div class="wrap">
+    <p class="statement anim" data-anim="clip-reveal">ออกแบบมาเพื่อคนที่ใช้มือถือ<b>ทำงานจริง</b> — <span class="dim">เครื่องเดียวที่รวมพลัง ความเป็นส่วนตัว และความคิดสร้างสรรค์ไว้ด้วยกัน อย่างไร้ที่ติ</span></p>
+  </div>
+</section>
+
+<section id="features" style="padding-top:0">
+  <div class="wrap center" style="margin-bottom:70px">
+    <span class="eyebrow anim">Key Features</span>
+    <h2 class="big kicker anim">ทุกรายละเอียด คือ<b>ความตั้งใจ</b></h2>
+  </div>
+  <div class="feat">
+    <div class="cell anim">
+      <div class="cell-media"><img src="./Samsung_Galaxy_S26_Ultra_privacy_202607191742.jpeg" alt="Privacy Display" loading="lazy"></div>
+      <span class="n">01</span><h3>Privacy Display</h3><p>จอความเป็นส่วนตัวรุ่นแรกของโลก กันสายตาคนข้าง ๆ เวลาทำงานนอกออฟฟิศ</p>
+    </div>
+    <div class="cell anim">
+      <div class="cell-media"><img src="./S_Pen_removed_from_phone_202607191743.jpeg" alt="S Pen ในตัว" loading="lazy"></div>
+      <span class="n">02</span><h3>S Pen ในตัว</h3><p>จด เขียน เซ็นเอกสาร วาดไอเดีย ได้ทันทีโดยไม่ต้องพกอุปกรณ์เพิ่ม</p>
+    </div>
+    <div class="cell anim">
+      <div class="cell-media"><img src="./Samsung_Galaxy_S26_Ultra_AI_202607191744.jpeg" alt="Galaxy AI" loading="lazy"></div>
+      <span class="n">03</span><h3>Galaxy AI</h3><p>สรุป แปล และแต่งภาพด้วยคำสั่ง ลดเวลางานซ้ำ ๆ ให้เหลือน้อยที่สุด</p>
+    </div>
+  </div>
+</section>
+
+<section id="camera">
+  <div class="wrap split">
+    <div class="visual anim" data-anim="slide-left">
+      <div class="media-frame">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="./Samsung_Galaxy_S26_Ultra_deconst_202607191751.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <div class="anim" data-anim="slide-right">
+      <span class="eyebrow">Camera System</span>
+      <h2 class="big">เก็บทุกเฟรม<br><b>ระดับมืออาชีพ</b></h2>
+      <p class="lead" style="margin-top:22px">ระบบกล้องความละเอียด 200MP รูรับแสงกว้าง F1.4 พร้อมระบบซูมไกลและ Nightography ให้คอนเทนต์คมชัดแม้ในที่แสงน้อย</p>
+      <div class="stat-row">
+        <div class="stat"><div class="v"><span class="stat-num" data-value="200">200</span><small>MP</small></div><div class="l">Wide Camera</div></div>
+        <div class="stat"><div class="v">F1.4</div><div class="l">รูรับแสงกว้าง</div></div>
+        <div class="stat"><div class="v"><span class="stat-num" data-value="100">100</span><small>×</small></div><div class="l">Space Zoom</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ai">
+  <div class="wrap center">
+    <span class="eyebrow anim">Galaxy AI · Gen 3</span>
+    <h2 class="big kicker anim">ผู้ช่วยที่<b>คิดไปพร้อมคุณ</b></h2>
+    <p class="lead anim" style="text-align:center;margin-top:24px">สรุปโน้ตประชุม แปลภาษาแบบเรียลไทม์ ค้นหาอัจฉริยะ และแต่งภาพด้วยการพิมพ์คำสั่ง — ทุกอย่างประมวลผลได้อย่างลื่นไหลบนเครื่อง</p>
+    <div class="stat-row anim" data-anim="scale-up" style="justify-content:center;margin-top:46px">
+      <div class="stat" style="text-align:center"><div class="v"><span class="stat-num" data-value="3">3</span></div><div class="l">Galaxy AI Generation</div></div>
+      <div class="stat" style="text-align:center"><div class="v">24/7</div><div class="l">On-device Assist</div></div>
+      <div class="stat" style="text-align:center"><div class="v">∞</div><div class="l">Creative Possibilities</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="performance">
+  <div class="wrap split rev">
+    <div class="visual anim" data-anim="slide-right">
+      <div class="media-frame">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="./Samsung_Galaxy_S26_Ultra_perform_202607191755.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <div class="anim" data-anim="slide-left">
+      <span class="eyebrow">Performance</span>
+      <h2 class="big">แรงที่สุด<br>ในฝั่ง <b>Android</b></h2>
+      <p class="lead" style="margin-top:22px">ชิป Snapdragon 8 Elite Gen 5 for Galaxy ประมวลผลลื่นไหล รองรับงานตัดต่อวิดีโอ มัลติทาสก์หนัก และเกมกราฟิกสูงได้อย่างไร้สะดุด</p>
+      <div class="stat-row">
+        <div class="stat"><div class="v">8<small>Elite</small></div><div class="l">Snapdragon Gen 5</div></div>
+        <div class="stat"><div class="v"><span class="stat-num" data-value="6.9" data-decimals="1">6.9</span><small>"</small></div><div class="l">จอ Dynamic AMOLED</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="battery">
+  <div class="wrap center">
+    <span class="eyebrow anim">Battery &amp; Charging</span>
+    <h2 class="big kicker anim">อึดทั้งวัน<br><b>ชาร์จไวทันใจ</b></h2>
+    <div class="stat-row anim" data-anim="stagger-up" style="justify-content:center;margin-top:44px">
+      <div class="stat" style="text-align:center"><div class="v"><span class="stat-num" data-value="5000">5,000</span><small>mAh</small></div><div class="l">แบตเตอรี่</div></div>
+      <div class="stat" style="text-align:center"><div class="v"><span class="stat-num" data-value="60">60</span><small>W</small></div><div class="l">ชาร์จเร็ว</div></div>
+      <div class="stat" style="text-align:center"><div class="v">All<small>day</small></div><div class="l">ใช้งานต่อเนื่อง</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="display">
+  <div class="wrap split">
+    <div class="visual anim" data-anim="scale-up">
+      <div class="media-frame">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="./Samsung_Galaxy_S26_Ultra_display_202607191759.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <div class="anim" data-anim="slide-right">
+      <span class="eyebrow">Display</span>
+      <h2 class="big">จอที่<b>ปกป้อง</b><br>ความเป็นส่วนตัว</h2>
+      <p class="lead" style="margin-top:22px">จอ Dynamic AMOLED ขนาด 6.9 นิ้ว คมชัดกลางแดด พร้อมจอความเป็นส่วนตัวรุ่นแรกของโลก</p>
+    </div>
+  </div>
+</section>
+
+<section id="audience">
+  <div class="wrap aud">
+    <div class="anim" data-anim="slide-left">
+      <span class="eyebrow">Made for Creators</span>
+      <h2 class="big">สร้างมาเพื่อคนที่<b>สร้างสรรค์</b></h2>
+      <ul>
+        <li><span class="k">✓</span><div><b>เครื่องเดียวจบ ทั้งงานและครีเอทีฟ</b> — S Pen + AI + กล้องโปร</div></li>
+        <li><span class="k">✓</span><div><b>อุ่นใจเรื่องข้อมูลในที่สาธารณะ</b> — Privacy Display แก้ตรงจุด</div></li>
+        <li><span class="k">✓</span><div><b>AI ช่วยลดเวลางานจริง</b> — สรุป แปล แต่งภาพด้วยคำสั่ง</div></li>
+        <li><span class="k">✓</span><div><b>อิสระแบบ Android</b> — เชื่อมต่อและปรับแต่งได้ตามใจ</div></li>
+      </ul>
+    </div>
+    <div class="persona anim" data-anim="slide-right">
+      <div class="who"><div class="avatar">ภ</div>
+        <div><div style="font-weight:500;font-size:1.05rem">"ภูมิ" · Prosumer Creator</div>
+        <div style="color:var(--muted);font-size:.9rem">กลุ่มเป้าหมายหลัก</div></div>
+      </div>
+      <dl>
+        <dt>อายุ</dt><dd>32 ปี</dd>
+        <dt>อาชีพ</dt><dd>ครีเอเตอร์ + ที่ปรึกษาการตลาดฟรีแลนซ์</dd>
+        <dt>ไลฟ์สไตล์</dt><dd>ทำงานนอกสถานที่ ถ่าย/ตัดต่อเอง</dd>
+        <dt>มองหา</dt><dd>เครื่องเดียวที่ทำงาน–ถ่าย–จดไอเดียได้ครบ</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="design">
+  <div class="wrap center">
+    <span class="eyebrow anim">Design Details</span>
+    <h2 class="big kicker anim">งานประณีต<br>ในทุก<b>สัมผัส</b></h2>
+    <p class="lead anim" style="text-align:center;margin-top:22px">ดีไซน์เรียบหรู วัสดุพรีเมียม พร้อม 4 เฉดสีที่คัดสรรมาอย่างพิถีพิถัน</p>
+    <div class="colors anim">
+      <span class="swatch" style="background:#5b4b8a" title="Cobalt Violet"></span>
+      <span class="swatch" style="background:#7fa8d8" title="Sky Blue"></span>
+      <span class="swatch" style="background:#e9e9ef" title="White"></span>
+      <span class="swatch" style="background:#15151b" title="Black"></span>
+    </div>
+    <p class="fine anim" style="margin-top:18px">Cobalt Violet · Sky Blue · White · Black</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="price">
+  <div class="wrap center" style="margin-bottom:56px">
+    <span class="eyebrow anim">Pricing</span>
+    <h2 class="big kicker anim">เป็นเจ้าของ <b>S26 Ultra</b></h2>
+    <p class="lead anim" style="text-align:center;margin-top:20px">ผ่อน 0% นานสูงสุด 10 เดือน พร้อมโปรแลกเครื่องเก่า (Trade-in)</p>
+  </div>
+  <div class="wrap">
+    <div class="price-grid">
+      <div class="tier anim" data-anim="slide-left">
+        <div class="cap">256 GB</div><div class="amt">฿46,900</div>
+        <div class="note">สำหรับการใช้งานทั่วไป–ทำงาน</div>
+        <a href="#register" class="btn btn-outline" style="width:100%;justify-content:center">สั่งซื้อ · Buy Now</a>
+      </div>
+      <div class="tier best anim" data-anim="scale-up">
+        <span class="badge">ยอดนิยม</span>
+        <!-- 512GB price is approximate; verify current price on samsung.com/th before publishing -->
+        <div class="cap">512 GB</div><div class="amt">฿<span data-price512>54,900</span></div>
+        <div class="note">สำหรับครีเอเตอร์ที่เก็บคอนเทนต์เยอะ</div>
+        <a href="#register" class="btn btn-primary" style="width:100%;justify-content:center">สั่งซื้อ · Buy Now</a>
+      </div>
+      <div class="tier anim" data-anim="slide-right">
+        <div class="cap">1 TB</div><div class="amt">฿66,900</div>
+        <div class="note">สำหรับงานวิดีโอ/ไฟล์ขนาดใหญ่</div>
+        <a href="#register" class="btn btn-outline" style="width:100%;justify-content:center">สั่งซื้อ · Buy Now</a>
+      </div>
+    </div>
+    <p class="fine">*ราคาอ้างอิง ณ ก.ค. 2026 — 256GB และ 1TB อ้างอิงจาก Samsung Thailand ส่วน 512GB เป็นราคาประมาณ โปรดตรวจสอบราคาปัจจุบันที่ samsung.com/th ก่อนตัดสินใจ</p>
+  </div>
+</section>
+
+<section id="register" style="padding-top:0">
+  <div class="wrap">
+    <div class="duo">
+      <div class="box anim" data-anim="slide-left">
+        <span class="eyebrow">Register</span>
+        <h3 style="font-size:1.5rem;font-weight:400;margin:6px 0 6px">ลงทะเบียนรับสิทธิ์ก่อนใคร</h3>
+        <p style="color:var(--silver);font-size:.95rem;font-weight:300">รับข่าวเปิดจอง โปรแลกเครื่อง และสิทธิ์อัปเกรดความจุฟรี ก่อนใคร</p>
+        <div class="field">
+          <input class="inp" id="regEmail" type="email" placeholder="กรอกอีเมลของคุณ" aria-label="อีเมล">
+          <button class="btn btn-primary" id="regBtn">ลงทะเบียน · Register</button>
+        </div>
+        <div class="msg" id="regMsg" role="status"></div>
+      </div>
+      <div class="box anim" id="contact" data-anim="slide-right">
+        <span class="eyebrow">Contact Us</span>
+        <h3 style="font-size:1.5rem;font-weight:400;margin:6px 0 12px">ติดต่อเรา</h3>
+        <div class="crow"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg> <a href="https://www.samsung.com/th/support/" target="_blank" rel="noopener noreferrer">Samsung Thailand Email Support</a></div>
+        <div class="crow"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 006 6l2-3 5 2v4a2 2 0 01-2 2A17 17 0 013 6a2 2 0 012-2z"/></svg> 1800-29-3232</div>
+        <div class="crow"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> สำนักงานใหญ่ บริษัท ไทยซัมซุง อิเลคโทรนิคส์ จำกัด (Samsung Thailand) อาคารเอ็มไพร์ทาวเวอร์ ชั้น 33–35, เลขที่ 195 ถนนสาทรใต้ แขวงยานนาวา เขตสาทร กรุงเทพฯ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="brand">Galaxy&nbsp;S26&nbsp;Ultra</div>
+      <div class="foot-links">
+        <a href="#camera">กล้อง</a><a href="#ai">AI</a><a href="#display">จอภาพ</a>
+        <a href="#price">ราคา</a><a href="#register">ลงทะเบียน</a><a href="#contact">ติดต่อเรา</a>
+      </div>
+    </div>
+    <div class="disclaimer">
+      <strong>หมายเหตุ (Disclaimer):</strong> เว็บไซต์นี้จัดทำขึ้นเพื่อประกอบกิจกรรมการเรียนการสอนในรายวิชา BUS101: Principles of Marketing เท่านั้น โดยเป็นส่วนหนึ่งของโครงการศึกษาเชิงวิชาการ เว็บไซต์นี้ไม่ได้เป็นเว็บไซต์อย่างเป็นทางการของ Samsung และไม่มีวัตถุประสงค์เพื่อการค้า การจำหน่ายสินค้า หรือการแสวงหาผลกำไรใด ๆ
+    </div>
+    <p class="copy">จัดทำเพื่อการศึกษา · ชื่อผลิตภัณฑ์และเครื่องหมายการค้าเป็นของ Samsung Electronics — ใช้เพื่ออ้างอิงเชิงวิชาการเท่านั้น</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var nav=document.getElementById('nav');
+  var onScroll=function(){ nav.classList.toggle('solid', window.scrollY>40); };
+  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+
+  (function(){
+    /* Scroll-scrubbed hero video: scroll position drives currentTime while the hero is pinned.
+       Falls back to a plain muted autoplay loop (lighter S26_Ultra.mp4) for reduced-motion users
+       and iOS, where programmatic currentTime scrubbing is unreliable — so the hero is never
+       blank or frozen. */
+    var video = document.getElementById('heroVideo');
+    var heroSection = document.getElementById('heroSection');
+    if(!video || !heroSection) return;
+
+    var isIOS = /iP(hone|od|ad)/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    var canScrub = !reduce && !isIOS && typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined";
+    var scrubActive = false;
+
+    function useFallbackLoop(){
+      var source = video.querySelector('source');
+      if(source) source.setAttribute('src','./S26_Ultra.mp4');
+      video.setAttribute('autoplay','');
+      video.setAttribute('loop','');
+      video.load();
+      video.play().catch(function(){});
+    }
+
+    if(!canScrub){ useFallbackLoop(); return; }
+
+    gsap.registerPlugin(ScrollTrigger);
+    var heroTargetTime = 0;
+    function raf(){
+      if(scrubActive && video.readyState >= 1 && Math.abs(video.currentTime - heroTargetTime) > 0.008){
+        try{ video.currentTime = heroTargetTime; }catch(e){}
+      }
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    function setupPin(duration){
+      if(!duration || !isFinite(duration)){ useFallbackLoop(); return; }
+      scrubActive = true;
+      var fadeTl = gsap.timeline({paused:true}).to(".hero-content",{opacity:0,y:-40,ease:"none"});
+      ScrollTrigger.create({
+        trigger: heroSection,
+        start: "top top",
+        end: "+=180%",
+        pin: true,
+        pinSpacing: true,
+        scrub: true,
+        onUpdate: function(self){
+          heroTargetTime = self.progress * duration;
+          fadeTl.progress(Math.min(1, self.progress * 1.5));
+        }
+      });
+      ScrollTrigger.refresh();
+    }
+
+    if(video.readyState >= 1 && video.duration){
+      setupPin(video.duration);
+    } else {
+      video.addEventListener('loadedmetadata', function(){ setupPin(video.duration); }, {once:true});
+      setTimeout(function(){ if(!scrubActive) useFallbackLoop(); }, 4000);
+    }
+  })();
+
+  (function(){
+    var b=document.getElementById('regBtn'),e=document.getElementById('regEmail'),m=document.getElementById('regMsg');
+    if(!b)return;
+    b.addEventListener('click',function(){
+      var val=(e.value||'').trim();
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)){m.style.color='#ff9db1';m.textContent='กรุณากรอกอีเมลให้ถูกต้อง';return;}
+      m.style.color='var(--accent)';
+      m.textContent='ลงทะเบียนสำเร็จ! เราจะแจ้งข่าวเปิดจองไปที่ '+val+' (สาธิตเพื่อการศึกษา)';
+      e.value='';
+    });
+  })();
+  var lenis = null;
+  if(!reduce && typeof Lenis!=="undefined"){
+    lenis = new Lenis({duration:1.2,easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));},smoothWheel:true});
+    gsap && gsap.ticker && gsap.ticker.add(function(time){ lenis.raf(time*1000); });
+    typeof gsap!=="undefined" && gsap.ticker.lagSmoothing(0);
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      var target = id.length>1 ? document.querySelector(id) : null;
+      if(!target) return;
+      e.preventDefault();
+      if(lenis){ lenis.scrollTo(target, {offset:-64, duration:1.3}); }
+      else { target.scrollIntoView({behavior: reduce?'auto':'smooth', block:'start'}); }
+    });
+  });
+  if(reduce || typeof gsap==="undefined"){ return; }
+  gsap.registerPlugin(ScrollTrigger);
+  if(lenis){ lenis.on('scroll', ScrollTrigger.update); }
+  gsap.timeline({defaults:{ease:"power3.out"}}).from(".hero .anim",{y:34,opacity:0,duration:1.1,stagger:.12,delay:.15});
+  var ANIM_FROM = {
+    'slide-left':{x:-70,opacity:0},
+    'slide-right':{x:70,opacity:0},
+    'scale-up':{scale:.88,opacity:0},
+    'clip-reveal':{clipPath:'inset(100% 0 0 0)',opacity:0}
+  };
+  gsap.utils.toArray(".anim").forEach(function(el){
+    if(el.closest(".hero"))return;
+    var vars = Object.assign({duration:1,stagger:.1,ease:"power3.out"}, ANIM_FROM[el.dataset.anim] || {y:40,opacity:0});
+    if(el.dataset.anim==='clip-reveal'){ vars.duration=1.2; vars.ease='power4.inOut'; }
+    if(el.dataset.anim==='scale-up'){ vars.ease='power2.out'; }
+    gsap.from(el,Object.assign({scrollTrigger:{trigger:el,start:"top 86%",toggleActions:"play none none none"}},vars));
+  });
+  gsap.from(".feat .cell",{y:50,opacity:0,duration:.9,stagger:.12,ease:"power3.out",scrollTrigger:{trigger:".feat",start:"top 82%"}});
+  document.querySelectorAll('.stat-num').forEach(function(el){
+    var target = parseFloat(el.dataset.value);
+    var decimals = parseInt(el.dataset.decimals||'0',10);
+    var obj = {val:0};
+    gsap.to(obj,{
+      val:target, duration:1.6, ease:"power1.out",
+      onUpdate:function(){ el.textContent = decimals>0 ? obj.val.toFixed(decimals) : Math.round(obj.val).toLocaleString('en-US'); },
+      scrollTrigger:{trigger: el.closest('.stat')||el, start:"top 85%", toggleActions:"play none none none"}
+    });
+  });
+  ScrollTrigger.refresh();
+})();
+</script>
+</body>
+</html>
